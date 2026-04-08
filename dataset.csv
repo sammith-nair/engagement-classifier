@@ -1,0 +1,29 @@
+BEGIN
+
+CREATE dataset with post details
+
+DEFINE function classify(post_type, time, hashtags, caption_length):
+
+    IF hashtags >= 8 THEN
+        RETURN High Engagement
+
+    ELSE IF post_type = "Reel" AND time = "Night" THEN
+        RETURN High Engagement
+
+    ELSE IF caption_length > 100 THEN
+        RETURN High Engagement
+
+    ELSE
+        RETURN Low Engagement
+
+FOR each post in dataset:
+    APPLY classify function
+    PRINT result
+
+TAKE user input:
+    post_type, time, hashtags, caption_length
+
+CALL classify function with input
+DISPLAY predicted engagement
+
+END
